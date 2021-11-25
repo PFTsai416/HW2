@@ -77,6 +77,9 @@ eval=coco
 ## Download YOLOv4 from github to ./darknet folder
 git clone https://github.com/AlexeyAB/darknet.git
 
+## Pretrained weight download
+https://drive.google.com/file/d/1fM_xujPIW9T8xfmflydJCR4gxYw9EwiR/view?usp=sharing 
+
 ## Modify the make file
 ./darknet/MakeFile
 GPU=1
