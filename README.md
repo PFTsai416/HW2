@@ -161,9 +161,6 @@ valid = ./data/valid.txt
 ./darknet detector map ../data/VRDL.data cfg/yolov4.cfg backup/yolov4_*.weights -points 11 -thresh 0.5 -iou_thresh 0.5
 Then result will show as "mean average precision (mAP@0.50) = 0.778463, or 77.85 %"
 
-## Inference time
-#choose the best mAP based on mAP calculation result of mAP@0.50
-
 #create result.txt file
 ./darknet detector test ../data/VRDL.data cfg/yolov4.cfg backup/*.weights -dont_show -ext_output < ../data/test.txt > result.txt
 #execute ./data/inference_time.py
@@ -177,4 +174,11 @@ Then the result will show :
 ./darknet detector valid ../data/VRDL.data cfg/yolov4.cfg backup/yolov4_last.weights
 There will be coco*.json file under ./darknet/results folder
 Rename it to answer.json and zip it
+
+## Inference time
+#choose the best mAP based on mAP calculation result of mAP@0.50
+./darknet detector valid ../data/VRDL.data cfg/yolov4.cfg backup/*.weights 
+There will be result.txt under ./darknet folder
+python inference.py 
+Then the inference time will be calculated
 
